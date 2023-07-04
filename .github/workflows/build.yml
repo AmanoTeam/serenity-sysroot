@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches:
+        - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+      with:
+        submodules: true
+    - name: Build SerenityOS
+      run: bash './build.sh'
+    - name: Upload artifact
+      uses: actions/upload-artifact@main
+      with:
+        path: |
+          aarch64-unknown-serenity.tar.xz
+          aarch64-unknown-serenity.tar.xz.sha256
+          x86_64-unknown-serenity.tar.xz
+          x86_64-unknown-serenity.tar.xz.sha256
