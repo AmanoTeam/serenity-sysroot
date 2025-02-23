@@ -7,11 +7,14 @@ sudo apt-get install --assume-yes 'libmpc-dev' 'ninja-build'
 declare -r MAKEJOBS="$(($(nproc) * 32))"
 
 declare -ra targets=(
+	'riscv64'
 	'x86_64'
 	'aarch64'
 )
 
 declare -r revision='e10d5a4'
+
+export MAKEJOBS
 
 [ -d './serenity' ] || git clone 'https://github.com/SerenityOS/serenity.git'
 

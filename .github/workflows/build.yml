@@ -18,7 +18,16 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         path: |
-          serenity/aarch64-unknown-serenity.tar.xz
-          serenity/aarch64-unknown-serenity.tar.xz.sha256
-          serenity/x86_64-unknown-serenity.tar.xz
-          serenity/x86_64-unknown-serenity.tar.xz.sha256
+          serenity/*.tar.xz*
+    - name: Create release
+      uses: softprops/action-gh-release@master
+      with:
+        tag_name: 0.2
+        name: SerenityOS sysroots
+        files: ./*.xz*
+        draft: false
+        prerelease: false
+        fail_on_unmatched_files: true
+        body: "* Initial release"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
