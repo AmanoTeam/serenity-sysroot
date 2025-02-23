@@ -11,7 +11,7 @@ declare -ra targets=(
 	'aarch64'
 )
 
-declare -r revision='a627c15'
+declare -r revision='e10d5a4'
 
 [ -d './serenity' ] || git clone 'https://github.com/SerenityOS/serenity.git'
 
