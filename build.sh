@@ -4,7 +4,7 @@ set -eu
 
 sudo apt-get install --assume-yes 'libmpc-dev' 'ninja-build'
 
-declare -r MAKEJOBS="$(($(nproc) * 32))"
+declare -r MAKEJOBS='40'
 
 declare -ra targets=(
 	'riscv64'
