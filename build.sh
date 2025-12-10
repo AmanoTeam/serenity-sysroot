@@ -12,7 +12,7 @@ declare -ra targets=(
 	'aarch64'
 )
 
-declare -r revision='e10d5a4'
+declare -r revision='fae69a8'
 
 export MAKEJOBS
 
