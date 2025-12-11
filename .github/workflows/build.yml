@@ -12,6 +12,9 @@ jobs:
     - uses: actions/checkout@main
       with:
         submodules: true
+    - name: Free up some space
+      run: |
+        curl 'https://raw.githubusercontent.com/AmanoTeam/gha-free-space/refs/heads/master/main.sh' -sSf | bash 
     - name: Build SerenityOS
       run: bash './build.sh'
     - name: Upload artifact

@@ -12,15 +12,11 @@ declare -ra targets=(
 	'aarch64'
 )
 
-declare -r revision='fae69a8'
-
 export MAKEJOBS
 
-[ -d './serenity' ] || git clone 'https://github.com/SerenityOS/serenity.git'
+[ -d './serenity' ] || git clone --depth '1' 'https://github.com/SerenityOS/serenity.git'
 
 cd './serenity'
-
-git checkout "${revision}"
 
 for target in "${targets[@]}"; do
 	declare triplet="${target}-unknown-serenity"
