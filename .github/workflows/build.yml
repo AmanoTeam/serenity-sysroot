@@ -15,6 +15,10 @@ jobs:
     - name: Free up some space
       run: |
         curl 'https://raw.githubusercontent.com/AmanoTeam/gha-free-space/refs/heads/master/main.sh' -sSf | bash 
+    - name: Install required dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential || true
     - name: Build SerenityOS
       run: bash './build.sh'
     - name: Upload artifact
