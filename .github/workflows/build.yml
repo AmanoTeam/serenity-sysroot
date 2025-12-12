@@ -29,9 +29,9 @@ jobs:
     - name: Create release
       uses: softprops/action-gh-release@master
       with:
-        tag_name: 0.2
+        tag_name: 0.1
         name: SerenityOS sysroots
-        files: ./*.xz*
+        files: serenity/*.tar.xz*
         draft: false
         prerelease: false
         fail_on_unmatched_files: true
